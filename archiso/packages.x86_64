@@ -141,37 +141,28 @@ zsh
 #######################################################
 
 alci-dwm
-#alci-dwm-nemesis
 alci-calamares
-#alci-calamares-dev
 alci-calamares-config
-#alci-calamares-config-btrfs
-#alci-calamares-config-dev
-#alci-calamares-config-hardened
-#alci-calamares-config-lts
-#alci-calamares-config-pure
-#alci-calamares-config-xanmod
-#alci-calamares-config-zen
+
 xterm
 
 #######################################################
 ###      PACKAGES THAT STAY AFTER INSTALLATION      ###
 #######################################################
 
-sddm
-bash-completion
+
 os-prober
 dex
 libxinerama
 make
 xorg-xkill
-xterm
+kitty
 xorg-xrdb
 mkinitcpio-openswap
 
 ##### you can also use nmtui from the terminal
-#networkmanager
-#network-manager-applet
+networkmanager
+network-manager-applet
 
 #######################################################
 ###                    EXTRAS                       ###
@@ -179,9 +170,10 @@ mkinitcpio-openswap
 
 ##### xorg applications
 
-#xorg-server
-#xorg-apps
-#neofetch
+xorg-server
+xorg-xinit
+xorg-apps
+neofetch
 
 
 ##### Drivers for graphical cards
@@ -196,82 +188,36 @@ mkinitcpio-openswap
 #xf86-video-amdgpu
 #xf86-video-nouveau
 
-#nvidia
-#nvidia-settings
-#nvidia-utils
+nvidia
+nvidia-settings
+nvidia-utils
 
 
 
-##### lightdm display manager
-
-#lightdm
-#lightdm-gtk-greeter
-
-##### sddm display manager
-
-#sddm
-#alci-sddm-plasma-archpaint
-
-##### gdm display manager
-
-#gdm
 
 
 
 ##### want to have base-devel group
 
-#base-devel
+base-devel
 
 ##### want to have linux-headers
 
-#linux-headers
+linux-headers
+linux-lts
+linux-lts-headers
 
 
 
 ##### want to have a desktop
 
-#test
-#xfce4
-#xfce4-goodies
-#neofetch
-
-
-##### want to add/use the ArcoLinux repos
-
-#arcolinux-mirrorlist-git
-#arcolinux-keyring
-
-#test
-#arcolinux-wallpapers-git
-
-##### want to add/use the Chaotic repo
-
-#chaotic-mirrorlist
-#chaotic-keyring
-
-#test
-#xcursor-sweet
 
 
 ##### want to add/use your local repo packages
 ##### create your packages and put them in the local repo
 
-#There is a copy of the local repo in your folder
-#Copy/paste it to your homefolder
-#Change the name erik to your own username
-#update the database
+chaotic-mirrorlist
+chaotic-keyring
 
-#test
-#nemesis-wallpapers
-
-
-#### want have a btrfs format
-#### use alci-calamares-config-btrfs 
-
-#timeshift
-#grub-btrfs
-#timeshift-autosnap
+grub-btrfs
 git
-
-#grub theme
-alci-grub-theme-git

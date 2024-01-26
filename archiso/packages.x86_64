@@ -132,7 +132,7 @@ zsh
 
 # everything above comes from archiso releng folder
 #######################################################
-###                    ALCI                         ###
+###                    KABI                         ###
 #######################################################
 
 #######################################################
@@ -145,9 +145,6 @@ KABI-calamares
 KABI-calamares-config
 calamares-tools
 xorg
-gparted
-thunar
-
 xorg-xinit
 xterm
 

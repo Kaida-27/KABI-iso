@@ -147,6 +147,7 @@ calamares-tools
 xorg
 xorg-xinit
 xterm
+sddm
 
 #######################################################
 ###      PACKAGES THAT STAY AFTER INSTALLATION      ###
@@ -165,7 +166,7 @@ xorg-xkill
 xorg-xrdb
 mkinitcpio-openswap
 fish
-
+numlockx
 networkmanager
 network-manager-applet
 ##### you can also use nmtui from the terminal

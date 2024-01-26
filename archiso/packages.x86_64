@@ -140,29 +140,41 @@ zsh
 ###             VIA CALAMARES CONFIG                ###
 #######################################################
 
-alci-dwm
-alci-calamares
-alci-calamares-config
 
+KABI-calamares
+KABI-calamares-config
+xfce4
+xorg
+gparted
+thunar
+
+xorg-xinit
 xterm
 
 #######################################################
 ###      PACKAGES THAT STAY AFTER INSTALLATION      ###
 #######################################################
 
-
+btrfs-progs
+ntfs-3g 
+snapper
+snap-pac
+snap-pac-grub
+grub-btrfs
+KABI-snapper-support
 os-prober
 dex
 libxinerama
 make
 xorg-xkill
-kitty
 xorg-xrdb
 mkinitcpio-openswap
+fish
 
-##### you can also use nmtui from the terminal
 networkmanager
 network-manager-applet
+##### you can also use nmtui from the terminal
+
 
 #######################################################
 ###                    EXTRAS                       ###
@@ -173,51 +185,64 @@ network-manager-applet
 xorg-server
 xorg-xinit
 xorg-apps
-neofetch
 
 
 ##### Drivers for graphical cards
-
-#driver for virtualbox - xf86-video-vmware is dependency
-#systemctl enable vboxservice
-#systemctl start vboxservice
-#to have fullscreen
-#virtualbox-guest-utils
-
-#xf86-video-intel
-#xf86-video-amdgpu
-#xf86-video-nouveau
 
 nvidia
 nvidia-settings
 nvidia-utils
 
-
-
-
-
-
-##### want to have base-devel group
+##### My Package
 
 base-devel
-
-##### want to have linux-headers
-
 linux-headers
 linux-lts
 linux-lts-headers
+neofetch
+kitty
+firefox
+kate
+eza
+thefuck
+starship
+lolcat
+sl
+asciiquarium
+git
+chaotic-mirrorlist
+chaotic-keyring
+
+
 
 
 
 ##### want to have a desktop
 
-
-
-##### want to add/use your local repo packages
-##### create your packages and put them in the local repo
-
-chaotic-mirrorlist
-chaotic-keyring
-
-grub-btrfs
-git
+plasma
+dolphin
+dolphin-plugins
+ark
+kate
+kcalc
+kolourpaint
+spectacle
+krunner
+partitionmanager
+packagekit-qt5
+discord
+btop
+kruler
+ksysguard
+steam 
+micro 
+nano
+starship
+sof-firmware
+man-db
+man-pages
+texinfo 
+zip 
+unrar 
+arch-install-scripts 
+btrfs-assistant

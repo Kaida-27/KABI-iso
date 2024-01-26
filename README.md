@@ -1,10 +1,14 @@
 # KABI
 
-## Kaida Arch Btrfs Installer or KABI
+# Kaida Arch Btrfs Installer or KABI
 
-### Automatically install Arch on Btrfs
+## Automatically install Arch on Btrfs
 
-#### Feature
+### Feature
+
+- Snapper Set up out of the box
+- Snapshot on each Update
+- Easy Sanpshot recovery from boot menu
 
 # Tip
 

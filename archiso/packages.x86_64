@@ -144,8 +144,6 @@ zsh
 KABI-calamares
 KABI-calamares-config
 calamares-tools
-xorg
-xorg-xinit
 xterm
 sddm
 
@@ -153,6 +151,8 @@ sddm
 ###      PACKAGES THAT STAY AFTER INSTALLATION      ###
 #######################################################
 
+xorg
+xorg-xinit
 btrfs-progs
 ntfs-3g
 timeshift
@@ -176,11 +176,6 @@ network-manager-applet
 ###                    EXTRAS                       ###
 #######################################################
 
-##### xorg applications
-
-xorg-server
-xorg-xinit
-xorg-apps
 
 
 ##### Drivers for graphical cards
@@ -241,4 +236,3 @@ texinfo
 zip
 unrar
 arch-install-scripts
-btrfs-assistant

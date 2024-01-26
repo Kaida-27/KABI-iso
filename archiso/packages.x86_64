@@ -143,7 +143,7 @@ zsh
 
 KABI-calamares
 KABI-calamares-config
-xfce4
+calamares-tools
 xorg
 gparted
 thunar

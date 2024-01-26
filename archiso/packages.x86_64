@@ -156,7 +156,7 @@ xterm
 #######################################################
 
 btrfs-progs
-ntfs-3g 
+ntfs-3g
 snapper
 snap-pac
 snap-pac-grub
@@ -234,15 +234,15 @@ discord
 btop
 kruler
 ksysguard
-steam 
-micro 
+steam
+micro
 nano
 starship
 sof-firmware
 man-db
 man-pages
-texinfo 
-zip 
-unrar 
-arch-install-scripts 
+texinfo
+zip
+unrar
+arch-install-scripts
 btrfs-assistant

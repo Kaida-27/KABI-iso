@@ -154,11 +154,9 @@ xterm
 
 btrfs-progs
 ntfs-3g
-snapper
-snap-pac
-snap-pac-grub
+timeshift
+timeshift-autosnap
 grub-btrfs
-snapper-support
 os-prober
 dex
 libxinerama

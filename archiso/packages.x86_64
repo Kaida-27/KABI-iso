@@ -145,7 +145,6 @@ KABI-calamares
 KABI-calamares-config
 calamares-tools
 xterm
-sddm
 
 #######################################################
 ###      PACKAGES THAT STAY AFTER INSTALLATION      ###
@@ -155,8 +154,10 @@ xorg
 xorg-xinit
 btrfs-progs
 ntfs-3g
-timeshift
-timeshift-autosnap
+snapper
+snap-pac
+snap-pac-grub
+snapper-support
 grub-btrfs
 os-prober
 dex

@@ -10,7 +10,6 @@ bolt
 brltty
 broadcom-wl
 btrfs-progs
-clonezilla
 cloud-init
 cryptsetup
 darkhttpd
@@ -127,7 +126,6 @@ wpa_supplicant
 wvdial
 xfsprogs
 xl2tpd
-zsh
 
 
 # everything above comes from archiso releng folder
@@ -152,13 +150,13 @@ xterm
 
 xorg
 xorg-xinit
-btrfs-progs
-ntfs-3g
+
 snapper
 snap-pac
 snap-pac-grub
 snapper-support
 grub-btrfs
+
 os-prober
 dex
 libxinerama
@@ -231,9 +229,6 @@ micro
 nano
 starship
 sof-firmware
-man-db
-man-pages
 texinfo
 zip
 unrar
-arch-install-scripts

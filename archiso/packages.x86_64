@@ -161,7 +161,7 @@ snapper
 snap-pac
 snap-pac-grub
 grub-btrfs
-KABI-snapper-support
+snapper-support
 os-prober
 dex
 libxinerama

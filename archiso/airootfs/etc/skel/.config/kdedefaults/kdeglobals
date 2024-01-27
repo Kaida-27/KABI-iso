@@ -1,0 +1,8 @@
+[General]
+ColorScheme=Archlinux
+
+[Icons]
+Theme=breeze
+
+[KDE]
+widgetStyle=Breeze

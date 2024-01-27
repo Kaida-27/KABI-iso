@@ -25,7 +25,7 @@ echo "################################################################## "
 echo
 
 	# setting of the general parameters
-	archisoRequiredVersion="archiso 74-1"
+	archisoRequiredVersion="archiso 75-1"
 	buildFolder=$HOME"/KABI-build"
 	outFolder=$HOME"/KABI-Iso-Out"
 	archisoVersion=$(sudo pacman -Q archiso)

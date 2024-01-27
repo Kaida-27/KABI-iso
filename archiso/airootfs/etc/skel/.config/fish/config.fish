@@ -53,4 +53,5 @@ thefuck --alias | source
 
 end
 
+set -g fish_greeting
 set -gx WINIT_X11_SCALE_FACTOR 1

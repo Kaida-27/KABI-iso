@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+
+rootdir=$(find / -type d -name "calamares-root*" -print -quit 2>/dev/null)
+rootdevice=$(df -P "$rootdir" | awk 'NR==2 {print $1}')
+rootid=$(blkid -s UUID -o value "$rootdevice")
+
+
+# Creating subvolumes
+btrfs subvolume create ${rootdir}/@
+btrfs subvolume create ${rootdir}/@/.snapshots
+mkdir ${rootdir}/@/.snapshots/1
+btrfs subvolume create ${rootdir}/@/.snapshots/1/snapshot
+mkdir ${rootdir}/@/boot
+btrfs subvolume create ${rootdir}/@/boot/grub
+btrfs subvolume create ${rootdir}/@/root
+btrfs subvolume create ${rootdir}/@/srv
+btrfs subvolume create ${rootdir}/@/tmp  
+btrfs subvolume create ${rootdir}/@/home
+mkdir ${rootdir}/@/var
+btrfs subvolume create ${rootdir}/@/var/cache
+btrfs subvolume create ${rootdir}/@/var/log
+btrfs subvolume create ${rootdir}/@/var/spool
+btrfs subvolume create ${rootdir}/@/var/tmp
+
+NOW=$(date +"%Y-%m-%d %H:%M:%S")
+sed -i "s|2022-01-01 00:00:00|${NOW}|" /usr/local/share/info.xml
+cp /usr/local/share/info.xml ${rootdir}/@/.snapshots/1/info.xml
+
+#setting snapshot 1 as the default subvolume
+btrfs subvolume set-default $(btrfs subvolume list ${rootdir} | grep "@/.snapshots/1/snapshot" | grep -oP '(?<=ID )[0-9]+') ${rootdir}
+
+btrfs quota enable ${rootdir}
+
+#disabling COW for some Var directory
+chattr +C ${rootdir}/@/var/cache
+chattr +C ${rootdir}/@/var/log
+chattr +C ${rootdir}/@/var/spool
+chattr +C ${rootdir}/@/var/tmp
+
+# unmount root to remount with subvolume
+    umount ${rootdir}
+
+# mount @ subvolume
+    mount UUID=${ROOTUUID} -o compress=zstd ${rootdir}
+
+# make directories home, .snapshots, var, tmp
+
+	mkdir ${rootdir}/.snapshots
+	mkdir -p ${rootdir}/boot/grub
+	mkdir ${rootdir}/root
+	mkdir ${rootdir}/tmp
+	mkdir -p ${rootdir}/var/cache
+	mkdir ${rootdir}/var/log
+	mkdir ${rootdir}/var/spool
+	mkdir ${rootdir}/var/tmp
+	mkdir ${rootdir}/home
+	mkdir ${rootdir}/boot/efi
+
+# mount subvolumes and partition
+
+    mount UUID=${ROOTUUID} -o noatime,compress=zstd,ssd,commit=120,subvol=@/.snapshots ${rootdir}/.snapshots
+    mount UUID=${ROOTUUID} -o noatime,compress=zstd,ssd,commit=120,subvol=@/boot/grub ${rootdir}/boot/grub
+    mount UUID=${ROOTUUID} -o noatime,compress=zstd,ssd,commit=120,subvol=@/root ${rootdir}/root
+    mount UUID=${ROOTUUID} -o noatime,compress=zstd,ssd,commit=120,subvol=@/tmp ${rootdir}/tmp
+    mount UUID=${ROOTUUID} -o noatime,ssd,commit=120,subvol=@/var/cache ${rootdir}/var/cache
+    mount UUID=${ROOTUUID} -o noatime,ssd,commit=120,subvol=@/var/log,nodatacow ${rootdir}/var/log
+    mount UUID=${ROOTUUID} -o noatime,ssd,commit=120,subvol=@/var/spool,nodatacow ${rootdir}/var/spool
+    mount UUID=${ROOTUUID} -o noatime,ssd,commit=120,subvol=@/var/tmp,nodatacow ${rootdir}/var/tmp
+   	mount UUID=${EFIUUID} ${rootdir}/boot/efi
+   	mount UUID=${ROOTUUID} -o noatime,compress=zstd,ssd,commit=120,subvol=@/home ${rootdir}/home
+

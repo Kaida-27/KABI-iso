@@ -2,7 +2,15 @@
 
 rootdir=$(find / -type d -name "calamares-root*" -print -quit 2>/dev/null)
 rootdevice=$(df -P "$rootdir" | awk 'NR==2 {print $1}')
-rootid=$(blkid -s UUID -o value "$rootdevice")
+
+if blkid -o value -s TYPE "$rootdevice" | grep -q '^crypto'; then
+
+	luks_device=$(findmnt -no SOURCE --target "$rootdir")
+	rootid=$(blkid -s UUID -o value "$luks_device")
+
+else
+   	rootid=$(blkid -s UUID -o value "$rootdevice")
+fi
 
 
 # Creating subvolumes

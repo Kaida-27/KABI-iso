@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="archlinux"
+iso_name="KABI"
 iso_label="KABI_$(date +%Y%m)"
 iso_publisher="Arch Linux <https://archlinux.org>"
 iso_application="Kaida Arch Btrfs Installer"

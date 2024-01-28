@@ -10,7 +10,7 @@ alias Keyup="sudo pacman -Sy archlinux-keyring --needed --noconfirm"
 alias update="Mirror && Keyup && yay -Syu --noconfirm"
 
 alias pacrm="sudo pacman -Rns"
-alias dl="pacman -S"
+alias dl="sudo pacman -S"
 alias pacss="yay -Ss"
 alias pacs="pacman -Ss"
 alias cleanup="sudo pacman -Rsn (pacman -Qdtq)"
@@ -46,7 +46,7 @@ alias lt="eza -aT --level 2 --long --color=always --group-directories-first"
 starship init fish | source
 
 #speak for itself
-neofetch | lolcat
+pfetch | lolcat
 
 # Command helper
 thefuck --alias | source
